@@ -3,13 +3,13 @@ import "./Header.scss";
 
 import Logo from "../../Images/Logo.svg";
 
-import { Button } from "../nestComponents/Button";
+import { Button } from "../reUseComonents/Button";
 
 type Props = {};
 
 const Header = (props: Props) => {
   return (
-    <div className="conteiner">
+    <div className="header_conteiner">
       <div className="icons_task">
         <img src={Logo} alt="Test Logo" />
       </div>
@@ -21,4 +21,4 @@ const Header = (props: Props) => {
   );
 };
 
-export default Header;
+export { Header };
