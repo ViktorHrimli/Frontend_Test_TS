@@ -1,0 +1,25 @@
+.conteiner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    width: 100%;
+
+}
+
+.buttons_conteiner {
+    display: flex;
+
+    grid-gap: 10px;
+}
+
+.icons_task {
+    display: block;
+}
+
+.icons {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
