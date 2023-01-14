@@ -1,4 +1,4 @@
-import { Button } from "Components/reUseComonents/Button";
+import { Button } from "Components/reUseComonents/Buttons/Button";
 import React from "react";
 
 import "./Hero.scss";

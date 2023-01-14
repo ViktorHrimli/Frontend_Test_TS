@@ -3,7 +3,7 @@ import "./Header.scss";
 
 import Logo from "../../Images/Logo.svg";
 
-import { Button } from "../reUseComonents/Button";
+import { Button } from "Components/reUseComonents/Buttons/Button";
 
 type Props = {};
 
