@@ -25,6 +25,7 @@
 }
 
 .card_user {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,10 +42,94 @@
 
 }
 
+.conteiner_text {
+    display: flex;
+    flex-direction: column;
+
+    width: 242px;
+    overflow: hidden;
+
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .card_text {
     font-size: 16px;
     line-height: 26px;
     font-weight: 400;
 
+    max-width: 240px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
     color: rgba(0, 0, 0, 0.87);
+
+
+}
+
+// hide-show title name 
+
+.text_ex_tooltip {
+    position: relative;
+}
+
+.text_ex_tooltip .tooltip_content {
+
+    position: absolute;
+
+    top: 20px;
+    left: 50px;
+
+    padding: 3px 16px;
+    border-radius: 4px;
+
+    background: rgba(0, 0, 0, 0.87);
+    color: #fff;
+
+    box-sizing: border-box;
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: opacity 300ms;
+}
+
+.text_ex_tooltip:hover .tooltip_content {
+    opacity: 1;
+}
+
+// hide-show title email
+
+
+
+.text_ex_tooltip_emaill {
+    position: relative;
+}
+
+.text_ex_tooltip_email .tooltip_content_email {
+
+    position: absolute;
+
+    bottom: -30px;
+    left: 100px;
+
+    padding: 3px 16px;
+    border-radius: 4px;
+
+    background: rgba(0, 0, 0, 0.87);
+    color: #fff;
+
+    box-sizing: border-box;
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transition: opacity 300ms;
+}
+
+.text_ex_tooltip_email:hover .tooltip_content_email {
+    opacity: 1;
 }

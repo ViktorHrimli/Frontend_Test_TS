@@ -16,10 +16,20 @@ const ItemsCard = (props: UserType) => {
           width={70}
           height={70}
         />
-        <p className="card_text">{name}</p>
-        <div>
+        <div className="text_ex_tooltip">
+          <p className="card_text">{name}</p>
+          <div className="tooltip_content">
+            <span>{name}</span>
+          </div>
+        </div>
+        <div className="conteiner_text">
           <p className="card_text">{position}</p>
-          <p className="card_text">{email}</p>
+          <div className="text_ex_tooltip_email">
+            <p className="card_text">{email}</p>
+            <div className="tooltip_content_email">
+              <span>{email}</span>
+            </div>
+          </div>
           <p className="card_text">{phone}</p>
         </div>
       </div>
