@@ -4,8 +4,8 @@
     align-items: center;
     justify-content: flex-start;
 
-    padding: 40px 16px 71px 16px;
-    min-width: 328px;
+    padding: 40px 0px 71px 0px;
+    min-width: 360px;
 
 
     background-image: url(../../Images/MobHero.jpg);
@@ -15,11 +15,21 @@
 
 
     @media screen and (min-width: 768px) {
+        background-image: url(../../Images/TabHero.jpg);
+        padding: 89px 0px;
         min-width: 768px;
     }
 
     @media screen and (min-width: 1024px) {
+        background-image: url(../../Images/DeksHero.jpg);
+        padding: 164px 0px;
         min-width: 1024px;
+    }
+
+    @media screen and (min-width: 2560px) {
+        background-image: url(../../Images/BigDeskHero.jpg);
+        padding: 164px 0px;
+        min-width: 1170px;
     }
 }
 
@@ -28,16 +38,24 @@
     font-size: 40px;
     line-height: 1;
     font-weight: 400;
+    width: 328px;
 
     color: #fff;
 
     text-align: center;
+
+    @media screen and (min-width: 768px) {
+        width: 380px;
+    }
+
+
 }
 
 .hero_text {
     font-size: 16px;
     line-height: 26px;
     font-weight: 400;
+    width: 328px;
 
     color: #fff;
 
@@ -45,4 +63,8 @@
 
     margin-top: 21px;
     margin-bottom: 32px;
+
+    @media screen and (min-width: 768px) {
+        width: 380px;
+    }
 }

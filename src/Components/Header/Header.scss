@@ -6,13 +6,22 @@
     padding: 13px 16px;
     min-width: 328px;
 
+    background-color: #fff;
+
 
     @media screen and (min-width: 768px) {
-        min-width: 768px;
+        padding: 13px 32px;
+        min-width: 704px;
     }
 
     @media screen and (min-width: 1024px) {
-        min-width: 1024px;
+        padding: 13px 60px;
+        min-width: 904px;
+    }
+
+    @media screen and (min-width: 2560px) {
+        padding: 13px 695px;
+        min-width: 1170px;
     }
 
 }
