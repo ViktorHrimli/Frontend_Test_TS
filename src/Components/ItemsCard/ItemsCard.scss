@@ -47,8 +47,6 @@
     flex-direction: column;
 
     width: 242px;
-    overflow: hidden;
-
 
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -64,7 +62,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    cursor: pointer;
     color: rgba(0, 0, 0, 0.87);
 
 
@@ -74,6 +71,7 @@
 
 .text_ex_tooltip {
     position: relative;
+    cursor: pointer;
 }
 
 .text_ex_tooltip .tooltip_content {
@@ -105,15 +103,15 @@
 
 
 
-.text_ex_tooltip_emaill {
+.text_ex_tooltip_email {
     position: relative;
+    cursor: pointer;
 }
 
 .text_ex_tooltip_email .tooltip_content_email {
-
     position: absolute;
 
-    bottom: -30px;
+    bottom: -56px;
     left: 100px;
 
     padding: 3px 16px;
