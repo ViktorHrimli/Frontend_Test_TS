@@ -17,5 +17,14 @@
     "jsx": "react-jsx",
     "baseUrl": "src"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "rules": {
+    "jsx-a11y/img-redundant-alt": [
+      2,
+      {
+        "components": ["Image"],
+        "words": ["Cover", "Logo"]
+      }
+    ]
+  }
 }
