@@ -9,6 +9,8 @@ type UserType = {
 
 interface IUsers {
   users: UserType[];
+  total_pages: number;
+  total_users: number;
 }
 
 export type { IUsers, UserType };
