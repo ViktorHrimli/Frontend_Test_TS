@@ -7,7 +7,7 @@ type Props = {};
 
 const FormSection = (props: Props) => {
   return (
-    <div className="form_conteiner">
+    <div className="forms_conteiner">
       <h1 className="form_title">Working with POST request</h1>
       <Form />
     </div>

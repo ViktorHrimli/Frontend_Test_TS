@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 //
 import "./Form.scss";
-import { Button } from "Components/reUseComonents/Buttons/Button";
 
 type Inputs = {
   name: string;
   email: string;
   phone: string;
   position: string;
+  files: any;
 };
 
 const initialState: Inputs = {
@@ -16,19 +16,25 @@ const initialState: Inputs = {
   email: "",
   phone: "",
   position: "",
+  files: "",
 };
 
 const Form = () => {
+  const [valueFakeInput, setValueFakeInput] = useState("");
   const {
     register,
     reset,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     defaultValues: initialState,
   });
 
-  const onHandleSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onHandleSubmit: SubmitHandler<Inputs> = async (data) => {
+    console.log(data);
+
+    // reset();
+  };
 
   return (
     <form className="form" onSubmit={handleSubmit(onHandleSubmit)}>
@@ -50,9 +56,11 @@ const Form = () => {
         />
       </div>
 
+      {/* radio btn */}
       <div className="conteiner_select">
         <p className="select_text">Select your position</p>
         <div className="conteiner_checkbox">
+          {/* FRONTEND DEV */}
           <label className="check_box_leble">
             <input
               className="check_box"
@@ -67,6 +75,7 @@ const Form = () => {
             />
             Frontend developer
           </label>
+          {/* BACKEND DEV */}
           <label className="check_box_leble">
             <input
               className="check_box"
@@ -81,6 +90,7 @@ const Form = () => {
             />
             Backend developer
           </label>
+          {/* DESIGNER */}
           <label className="check_box_leble">
             <input
               className="check_box"
@@ -95,7 +105,7 @@ const Form = () => {
             />
             Designer
           </label>
-
+          {/* Qa */}
           <label className="check_box_leble">
             <input
               className="check_box"
@@ -112,6 +122,42 @@ const Form = () => {
           </label>
         </div>
       </div>
+
+      <div className="upload_input">
+        {/* hide input */}
+        <input
+          className="upload_hidden"
+          id="upload"
+          type="file"
+          accept=".jpg, .jpeg, .png"
+          {...register("files", {
+            required: {
+              value: true,
+              message: "",
+            },
+            onChange(event) {
+              setValueFakeInput(event.target.files[0].name);
+            },
+          })}
+        />
+        <label className="upload_lable" htmlFor="upload">
+          Upload
+        </label>
+        {/* fake input */}
+        <input
+          className="fake_input"
+          placeholder="Upload your photo"
+          type="text"
+          value={valueFakeInput}
+        />
+      </div>
+
+      <input
+        className="button_submit"
+        type="submit"
+        value="Submit"
+        disabled={!isValid}
+      />
     </form>
   );
 };

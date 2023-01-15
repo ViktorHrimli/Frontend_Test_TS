@@ -40,6 +40,12 @@
     background-color: transparent;
     color: rgba(0, 0, 0, 0.87);
 
+    @media screen and (min-width: 768px) {
+        width: (380px - 17px);
+    }
+
+
+
     &:focus::placeholder {
         opacity: 0;
     }
@@ -116,5 +122,102 @@
         background-color: #00BDD3;
         transform: translate(-50%, -50%);
         visibility: visible;
+    }
+}
+
+// upload input 
+
+.upload_input {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.fake_input {
+    display: inline-flex;
+
+    width: (260px - 17px);
+    padding: 14px 0px 14px 16px;
+
+    border: 1px solid #D0CFCF;
+    border-radius: 0px 4px 4px 0;
+    outline: none;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+
+
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.87);
+
+
+    @media screen and (min-width: 768px) {
+        width: (328px - 17px);
+    }
+
+    &:focus::placeholder {
+        opacity: 0;
+    }
+
+    &:placeholder-shown {
+        color: #7E7E7E;
+    }
+}
+
+.upload_lable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 14.5px;
+
+    color: rgba(0, 0, 0, 0.87);
+
+    border: 1px solid rgba(0, 0, 0, 0.87);
+    outline: none;
+    border-radius: 4px 0px 0px 4px;
+
+}
+
+.upload_hidden {
+    display: none;
+}
+
+// button submit
+
+.button_submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px 22px;
+    min-width: 100px;
+
+    border: none;
+    outline: none;
+    border-radius: 80px;
+
+    font-size: 16px;
+    line-height: 26px;
+
+    background-color: #F4E041;
+    color: #000;
+
+    cursor: pointer;
+
+    &:disabled {
+        background-color: #7E7E7E;
+        color: rgba(255, 255, 255, 0.87);
+    }
+
+    &:hover,
+    :focus {
+        background-color: #FFE302;
     }
 }
