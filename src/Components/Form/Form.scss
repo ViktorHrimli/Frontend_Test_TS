@@ -40,11 +40,9 @@
     background-color: transparent;
     color: rgba(0, 0, 0, 0.87);
 
-    @media screen and (min-width: 768px) {
-        width: (380px - 17px);
+    &:invalid {
+        border: 1px solid red;
     }
-
-
 
     &:focus::placeholder {
         opacity: 0;
@@ -53,7 +51,13 @@
     &:placeholder-shown {
         color: #7E7E7E;
     }
+
+    @media screen and (min-width: 768px) {
+        width: (380px - 17px);
+    }
 }
+
+
 
 // checkbox 
 
@@ -133,6 +137,8 @@
     align-items: stretch;
     justify-content: center;
 
+    width: 100%;
+
     margin-top: 50px;
     margin-bottom: 50px;
 
@@ -206,8 +212,7 @@
     font-size: 16px;
     line-height: 26px;
 
-    background-color: #F4E041;
-    color: #000;
+
 
     cursor: pointer;
 
@@ -216,8 +221,14 @@
         color: rgba(255, 255, 255, 0.87);
     }
 
-    &:hover,
-    :focus {
+
+
+    &:enabled {
         background-color: #FFE302;
+        color: #000;
+
+        &:hover:focus {
+            background-color: #FFE302;
+        }
     }
 }

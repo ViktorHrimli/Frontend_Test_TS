@@ -5,6 +5,7 @@ import "./UserGallery.scss";
 import { ItemsCard } from "Components/ItemsCard/ItemsCard";
 import { Button } from "Components/reUseComonents/Buttons/Button";
 import { Loader } from "Components/reUseComonents/Loader/Loader";
+import { ErrorText } from "Components/reUseComonents/ErrorText/ErrorText";
 
 //
 import { usersApi } from "redux/userApi";
@@ -34,15 +35,13 @@ const UserGallery = (props: Props) => {
     }
   }, [data]);
 
-  if (error) {
-    return <div>error</div>;
-  }
-
   return (
     <div className="gallery_conteiner">
       <h1 className="gallery_title">Working with GET request</h1>
 
       {isLoading && <Loader />}
+
+      {error && <ErrorText text="Request filed" />}
 
       <ul className="gallery_list">
         {data?.users &&
