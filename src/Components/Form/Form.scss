@@ -171,10 +171,16 @@
         opacity: 0;
     }
 
+    &:invalid {
+        border: 1px solid red;
+    }
+
     &:placeholder-shown {
         color: #7E7E7E;
     }
 }
+
+
 
 .upload_lable {
     display: flex;
@@ -191,9 +197,12 @@
 
 }
 
+
 .upload_hidden {
     display: none;
+
 }
+
 
 // button submit
 

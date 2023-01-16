@@ -58,7 +58,6 @@ const Form = () => {
           <input
             placeholder="Your name"
             className="input"
-            required={true}
             minLength={2}
             {...register("name", {
               onChange: async () => {
@@ -82,7 +81,6 @@ const Form = () => {
           <input
             placeholder="Email"
             className="input"
-            required={true}
             pattern="^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$"
             {...register("email", {
               onChange: async () => {
@@ -106,7 +104,6 @@ const Form = () => {
           <input
             placeholder="Phone"
             className="input"
-            required={true}
             pattern="^[\+]{0,1}380([0-9]{9})$"
             {...register("phone", {
               onChange: async () => {
@@ -201,6 +198,7 @@ const Form = () => {
           className="fake_input"
           placeholder="Upload your photo"
           type="text"
+          required={true}
           value={valueFakeInput}
         />
       </div>
