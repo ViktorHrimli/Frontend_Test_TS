@@ -8,18 +8,14 @@ import {
   validateEmail,
   validatePhone,
 } from "helpers/validateShema";
+import { Inputs } from "types/users";
+import { postNewUser } from "services/api";
+import { usersApi } from "redux/userApi";
 
 // components
 
 import { ErrorText } from "Components/reUseComonents/ErrorText/ErrorText";
-
-type Inputs = {
-  name: string;
-  email: string;
-  phone: string;
-  position: string;
-  files: any;
-};
+import { RadioButton } from "./RadioButton/RadioButton";
 
 const initialState: Inputs = {
   name: "",
@@ -31,6 +27,8 @@ const initialState: Inputs = {
 
 const Form = () => {
   const [valueFakeInput, setValueFakeInput] = useState("");
+  // const token = usersApi.useGetTokenQuery("");
+  // console.log(token);
 
   const {
     register,
@@ -45,7 +43,7 @@ const Form = () => {
   });
 
   const onHandleSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log(data.files);
+    postNewUser(data);
 
     // reset();
   };
@@ -125,51 +123,8 @@ const Form = () => {
       </div>
 
       {/* radio btn */}
-      <div className="conteiner_select">
-        <p className="select_text">Select your position</p>
-        <div className="conteiner_checkbox">
-          {/* FRONTEND DEV */}
-          <label className="check_box_leble">
-            <input
-              className="check_box"
-              type="radio"
-              value="Frontend developer"
-              {...register("position", {})}
-            />
-            Frontend developer
-          </label>
-          {/* BACKEND DEV */}
-          <label className="check_box_leble">
-            <input
-              className="check_box"
-              type="radio"
-              value="Backend developer"
-              {...register("position", {})}
-            />
-            Backend developer
-          </label>
-          {/* DESIGNER */}
-          <label className="check_box_leble">
-            <input
-              className="check_box"
-              type="radio"
-              value="Designer"
-              {...register("position", {})}
-            />
-            Designer
-          </label>
-          {/* Qa */}
-          <label className="check_box_leble">
-            <input
-              className="check_box"
-              type="radio"
-              value="QA"
-              {...register("position", {})}
-            />
-            QA
-          </label>
-        </div>
-      </div>
+
+      <RadioButton register={register} />
 
       <div className="upload_input">
         {/* hide input */}

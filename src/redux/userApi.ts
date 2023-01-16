@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-import { IUsers } from "../types/users";
+import { IUsers, Token } from "../types/users";
 
 const usersApi = createApi({
   reducerPath: "users",
@@ -19,7 +19,12 @@ const usersApi = createApi({
         },
       }),
     }),
+    getToken: build.query<Token, string>({
+      query: () => ({
+        url: "/token",
+      }),
+    }),
   }),
 });
-// page=1&count=5
+
 export { usersApi };
