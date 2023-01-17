@@ -19,7 +19,7 @@ const RadioButton: React.FC<Props> = ({ register }) => {
         {isSuccess &&
           data.positions.map(({ id, name }) => {
             return (
-              <label className="check_box_leble">
+              <label key={id} className="check_box_leble">
                 <input
                   className="check_box"
                   type="radio"

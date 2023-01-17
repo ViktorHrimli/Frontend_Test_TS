@@ -26,7 +26,7 @@ const initialState: Inputs = {
 };
 
 const Form = () => {
-  const [postUser, { isSuccess }] = usersApi.usePostNewUserMutation();
+  const [postUser] = usersApi.usePostNewUserMutation();
   const { data: newToken, refetch } = usersApi.useGetTokenQuery("");
 
   const [valueFakeInput, setValueFakeInput] = useState("");
@@ -67,7 +67,8 @@ const Form = () => {
   return (
     <form className="form" onSubmit={handleSubmit(onHandleSubmit)}>
       <div className="conteiner_input">
-        {/* NAME FIELD  */}
+        {/* NAME FIELD  START */}
+
         <div>
           <input
             placeholder="Your name"
@@ -90,7 +91,9 @@ const Form = () => {
           />
           {errors?.name && <ErrorText text={errors.name.message} />}
         </div>
-        {/* EMAIL FIELD */}
+        {/* NAME FIELD END */}
+
+        {/* EMAIL FIELD START */}
         <div className="">
           <input
             placeholder="Email"
@@ -113,7 +116,9 @@ const Form = () => {
           />
           {errors?.email && <ErrorText text={errors.email.message} />}
         </div>
-        {/* PHONE FIELD */}
+        {/* EMAIL FIELD END */}
+
+        {/* PHONE FIELD START */}
         <div className="">
           <input
             placeholder="Phone"
@@ -136,11 +141,12 @@ const Form = () => {
           />
           {errors?.phone && <ErrorText text={errors.phone.message} />}
         </div>
+        {/* PHONE FIELD START */}
       </div>
 
-      {/* radio btn */}
-
+      {/* radio btn start */}
       <RadioButton register={register} />
+      {/* radio btn end */}
 
       <div className="upload_input">
         {/* hide input */}

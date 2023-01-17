@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { url } from "inspector";
 
 import { IUsers, Token, Position } from "../types/users";
 
@@ -22,6 +21,11 @@ const usersApi = createApi({
         },
       }),
       providesTags: () => ["Post"],
+    }),
+    getUserById: build.query({
+      query: (id) => ({
+        url: `/users/${id}`,
+      }),
     }),
     getToken: build.query<Token, string>({
       query: () => ({
