@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 //
@@ -26,13 +26,16 @@ const initialState: Inputs = {
 };
 
 const Form = () => {
+  const [postUser, { isSuccess }] = usersApi.usePostNewUserMutation();
+  const { data: newToken, refetch } = usersApi.useGetTokenQuery("");
+
   const [valueFakeInput, setValueFakeInput] = useState("");
-  // const token = usersApi.useGetTokenQuery("");
-  // console.log(token);
+  const [newUser, setNewUser] = useState(new FormData());
+  const [token, setToken] = useState("");
 
   const {
     register,
-    // reset,
+    reset,
     handleSubmit,
     watch,
     setError,
@@ -42,11 +45,24 @@ const Form = () => {
     defaultValues: initialState,
   });
 
-  const onHandleSubmit: SubmitHandler<Inputs> = async (data) => {
-    postNewUser(data);
+  const onHandleSubmit: SubmitHandler<Inputs> = (data) => {
+    setNewUser(postNewUser(data));
 
-    // reset();
+    if (newToken) {
+      setToken(newToken.token);
+      refetch();
+    }
+
+    reset();
   };
+
+  useEffect(() => {
+    // CREATE NEW USER
+    if (newUser.get("email")) {
+      postUser({ newUser, token });
+    }
+    return () => {};
+  }, [newUser, postUser, token]);
 
   return (
     <form className="form" onSubmit={handleSubmit(onHandleSubmit)}>

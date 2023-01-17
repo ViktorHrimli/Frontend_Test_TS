@@ -16,7 +16,11 @@ type Inputs = {
 };
 
 type Token = {
-  data: { token: string };
+  token: string;
+};
+
+type Position = {
+  positions: { id: number; name: string }[];
 };
 
 interface IUsers {
@@ -25,4 +29,4 @@ interface IUsers {
   total_users: number;
 }
 
-export type { IUsers, UserType, Inputs, Token };
+export type { IUsers, UserType, Inputs, Token, Position };

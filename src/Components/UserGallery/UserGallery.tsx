@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import "./UserGallery.scss";
 // componetns
@@ -9,17 +9,18 @@ import { ErrorText } from "Components/reUseComonents/ErrorText/ErrorText";
 
 //
 import { usersApi } from "redux/userApi";
-import { UserType } from "types/users";
 
 type Props = {};
 
 const UserGallery = (props: Props) => {
   // local state
   const [pages, setPages] = useState(1);
-  const [users, setUsers] = useState<UserType[]>([]);
   const [showBtn, setShowBtn] = useState(true);
   // request
-  const { data, isLoading, error } = usersApi.useFetchAllUsersQuery(pages);
+
+  const { data, isLoading, error, isSuccess } =
+    usersApi.useGetAllUsersQuery(pages);
+
   // change page and hide button
   const handleShowMore = () => {
     if (data && data.total_pages > pages) {
@@ -28,12 +29,6 @@ const UserGallery = (props: Props) => {
       setShowBtn(false);
     }
   };
-  // save new user and re-render copmonetns
-  useEffect(() => {
-    if (data) {
-      setUsers((prev) => prev.concat(data.users));
-    }
-  }, [data]);
 
   return (
     <div className="gallery_conteiner">
@@ -44,8 +39,8 @@ const UserGallery = (props: Props) => {
       {error && <ErrorText text="Request filed" />}
 
       <ul className="gallery_list">
-        {data?.users &&
-          users.map((item) => <ItemsCard key={item.id} {...item} />)}
+        {isSuccess &&
+          data.users.map((item) => <ItemsCard key={item.id} {...item} />)}
       </ul>
       {showBtn && (
         <div onClick={handleShowMore}>
