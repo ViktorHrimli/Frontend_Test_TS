@@ -66,7 +66,7 @@ const Form = () => {
   useEffect(() => {
     // CREATE NEW USER
     if (newUser.get("email")) {
-      // postUser({ newUser, token });
+      postUser({ newUser, token });
     }
     return () => {};
   }, [newUser, postUser, token]);
