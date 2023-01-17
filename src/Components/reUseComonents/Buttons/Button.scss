@@ -1,3 +1,5 @@
+@use 'styles/_variables.scss' as *;
+
 .buttons {
     display: inline-flex;
     align-items: center;
@@ -11,17 +13,16 @@
     border-radius: 80px;
 
     font-family: Nunito;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: $paragraph-size-m;
+    line-height: $paragraph-LineHeight-m;
 
-    background-color: #F4E041;
-    color: #000;
+    background-color: $primary-color;
+    color: $black87;
 
     cursor: pointer;
 
     &:hover,
     :focus {
-        background-color: #FFE302;
-        ;
+        background-color: $hover-color;
     }
 }

@@ -1,3 +1,5 @@
+@use 'src/styles/_variables.scss' as *;
+
 .forms_conteiner {
     display: flex;
     flex-direction: column;
@@ -26,23 +28,4 @@
         min-width: 1170px;
     }
 
-}
-
-
-.form_title {
-    font-size: 40px;
-    line-height: 1;
-    font-weight: 400;
-
-    width: 328px;
-
-    margin-bottom: 50px;
-
-    text-align: center;
-
-    color: rgba(0, 0, 0, 0.87);
-
-    @media screen and (min-width: 768px) {
-        width: auto;
-    }
 }

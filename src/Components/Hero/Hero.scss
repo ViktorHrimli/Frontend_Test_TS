@@ -1,3 +1,5 @@
+@use 'src/styles/_variables.scss' as *;
+
 .hero_conteiner {
     display: flex;
     flex-direction: column;
@@ -31,41 +33,5 @@
         background-image: url(../../Images/BigDeskHero.jpg);
         padding: 164px 0px;
         min-width: 1170px;
-    }
-}
-
-
-.hero_title {
-    font-size: 40px;
-    line-height: 1;
-    font-weight: 400;
-    width: 328px;
-
-    color: #fff;
-
-    text-align: center;
-
-    @media screen and (min-width: 768px) {
-        width: 380px;
-    }
-
-
-}
-
-.hero_text {
-    font-size: 16px;
-    line-height: 26px;
-    font-weight: 400;
-    width: 328px;
-
-    color: #fff;
-
-    text-align: center;
-
-    margin-top: 21px;
-    margin-bottom: 32px;
-
-    @media screen and (min-width: 768px) {
-        width: 380px;
     }
 }

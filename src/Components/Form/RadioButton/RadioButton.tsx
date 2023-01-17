@@ -1,8 +1,10 @@
-import { Loader } from "Components/reUseComonents/Loader/Loader";
 import React from "react";
+import "./RadioButton.scss";
+
+//
+import { Loader } from "Components/reUseComonents/Loader/Loader";
 import { usersApi } from "redux/userApi";
 
-import "./RadioButton.scss";
 type Props = {
   register?: any;
 };

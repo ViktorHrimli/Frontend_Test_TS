@@ -1,6 +1,8 @@
+@use 'src/styles/_variables.scss' as *;
+
 .header_wrapper {
     width: 100%;
-    background-color: #fff;
+    background-color: $white87;
 }
 
 .header_conteiner {
@@ -10,9 +12,6 @@
 
     padding: 13px 16px;
     min-width: 328px;
-
-
-
 
     @media screen and (min-width: 768px) {
         padding: 13px 32px;

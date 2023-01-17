@@ -1,14 +1,13 @@
 import React from "react";
-
 import "./FormSection.scss";
 
 import { Form } from "Components/Form/Form";
-type Props = {};
+import { TitleText } from "Components/reUseComonents/TitleText/TitleText";
 
-const FormSection = (props: Props) => {
+const FormSection = () => {
   return (
     <div className="forms_conteiner">
-      <h1 className="form_title">Working with POST request</h1>
+      <TitleText text="POST" />
       <Form />
     </div>
   );

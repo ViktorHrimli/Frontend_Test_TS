@@ -1,22 +1,53 @@
+@use './variables.scss' as *;
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
-
 
 body {
   margin: 0;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: $paragraph-size-m;
+  line-height: $paragraph-LineHeight-m;
 
   font-family: Nunito, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   color: black;
-  background-color: #F8F8F8;
+  background-color: $background-color;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+.title {
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 400;
+  width: 328px;
+
+  color: $white87;
+
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    width: 380px;
+  }
+}
+
+.text {
+  width: 328px;
+
+  color: $white87;
+
+  text-align: center;
+
+  margin-top: 21px;
+  margin-bottom: 32px;
+
+  @media screen and (min-width: 768px) {
+    width: 380px;
+  }
 }
 
 

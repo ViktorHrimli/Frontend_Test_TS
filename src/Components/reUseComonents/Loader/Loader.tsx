@@ -1,8 +1,7 @@
 import React from "react";
 import "./Loader.scss";
-type Props = {};
 
-const Loader = (props: Props) => {
+const Loader = () => {
   return (
     <div className="lds-ring">
       <div></div>

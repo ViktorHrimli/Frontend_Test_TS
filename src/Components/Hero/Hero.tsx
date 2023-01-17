@@ -1,15 +1,13 @@
-import { Button } from "Components/reUseComonents/Buttons/Button";
 import React from "react";
-
 import "./Hero.scss";
 
-type Props = {};
+import { Button } from "Components/reUseComonents/Buttons/Button";
 
-const Hero = (props: Props) => {
+const Hero = () => {
   return (
     <div className="hero_conteiner">
-      <h1 className="hero_title">Test assignment for front-end developer</h1>
-      <p className="hero_text">
+      <h1 className="title">Test assignment for front-end developer</h1>
+      <p className="text">
         What defines a good front-end developer is one that has skilled
         knowledge of HTML, CSS, JS with a vast understanding of User design
         thinking as they'll be building web interfaces with accessibility in

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-
 import "./UserGallery.scss";
 // componetns
 import { ItemsCard } from "Components/ItemsCard/ItemsCard";
 import { Button } from "Components/reUseComonents/Buttons/Button";
 import { Loader } from "Components/reUseComonents/Loader/Loader";
 import { ErrorText } from "Components/reUseComonents/ErrorText/ErrorText";
+import { TitleText } from "Components/reUseComonents/TitleText/TitleText";
 
 //
 import { usersApi } from "redux/userApi";
@@ -32,7 +32,8 @@ const UserGallery = (props: Props) => {
 
   return (
     <div className="gallery_conteiner">
-      <h1 className="gallery_title">Working with GET request</h1>
+      {/* h1 text */}
+      <TitleText text="GET" />
 
       {isLoading && <Loader />}
 

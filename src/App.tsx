@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.scss";
 
+// components
 import { Header } from "./Components/Header/Header";
 import { Hero } from "Components/Hero/Hero";
 import { UserGallery } from "Components/UserGallery/UserGallery";

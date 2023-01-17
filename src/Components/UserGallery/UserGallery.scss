@@ -1,3 +1,5 @@
+@use 'src/styles/_variables.scss' as *;
+
 .gallery_conteiner {
     display: flex;
     flex-direction: column;
@@ -10,13 +12,11 @@
     background-color: inherit;
 
     @media screen and (min-width: 768px) {
-
         padding: 140px 32px;
         min-width: 704px;
     }
 
     @media screen and (min-width: 1024px) {
-
         padding: 140px 60px;
         min-width: 904px;
     }
@@ -28,26 +28,7 @@
 
 }
 
-
-.gallery_title {
-    font-size: 40px;
-    line-height: 1;
-    font-weight: 400;
-
-    width: 328px;
-
-    margin-bottom: 50px;
-
-    text-align: center;
-
-    color: rgba(0, 0, 0, 0.87);
-
-    @media screen and (min-width: 768px) {
-        width: auto;
-    }
-}
-
-
+// USERS LIST
 .gallery_list {
     display: grid;
 

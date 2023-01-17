@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-//
+// style
 import "./Form.scss";
+// helpers, api
+
 import {
+  postNewUser,
   validateName,
   validateEmail,
   validatePhone,
-} from "helpers/validateShema";
+} from "helpers";
+
 import { Inputs } from "types/users";
-import { postNewUser } from "services/api";
 import { usersApi } from "redux/userApi";
 
 // components
-
 import { ErrorText } from "Components/reUseComonents/ErrorText/ErrorText";
 import { RadioButton } from "./RadioButton/RadioButton";
 

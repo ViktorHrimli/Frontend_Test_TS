@@ -1,3 +1,5 @@
+@use 'src/styles/_variables.scss' as *;
+
 .select_text {
     margin-bottom: 10px;
 }
@@ -25,9 +27,6 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-
-    font-size: 16px;
-    line-height: 26px;
 
     grid-gap: 12px;
 }

@@ -1,3 +1,6 @@
+@use 'src/styles/_variables.scss' as *;
+
+
 .conteiner_card {
     display: flex;
     flex-direction: column;
@@ -9,7 +12,7 @@
 
     border-radius: 10px;
 
-    background-color: #fff;
+    background-color: $white87;
 
     @media screen and (min-width: 768px) {
         width: 304px;
@@ -53,16 +56,13 @@
 }
 
 .card_text {
-    font-size: 16px;
-    line-height: 26px;
-    font-weight: 400;
-
     max-width: 240px;
 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: rgba(0, 0, 0, 0.87);
+
+    color: $black87;
 
 
 }
@@ -85,15 +85,12 @@
     padding: 3px 16px;
     border-radius: 4px;
 
-    background: rgba(0, 0, 0, 0.87);
-    color: #fff;
+    background: $black87;
+    color: $white87;
 
     box-sizing: border-box;
     white-space: nowrap;
 
-
-
-    transition: opacity 300ms;
 }
 
 .text_ex_tooltip:hover .tooltip_content {
@@ -101,8 +98,6 @@
 }
 
 // hide-show title email
-
-
 .text_ex_tooltip_email {
     position: relative;
     cursor: pointer;
@@ -118,14 +113,11 @@
     padding: 3px 16px;
     border-radius: 4px;
 
-    background: rgba(0, 0, 0, 0.87);
-    color: #fff;
+    background: $black87;
+    color: $white87;
 
     box-sizing: border-box;
     white-space: nowrap;
-
-
-    transition: opacity 300ms;
 }
 
 .text_ex_tooltip_email:hover .tooltip_content_email {
