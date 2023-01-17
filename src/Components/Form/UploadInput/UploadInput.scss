@@ -1,0 +1,73 @@
+@use 'src/styles/_variables.scss' as *;
+
+.upload_input {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+
+    width: 100%;
+
+    margin-top: 47px;
+    margin-bottom: 50px;
+
+}
+
+.fake_input {
+    display: inline-flex;
+
+    width: (260px - 17px);
+    padding: 14px 0px 14px 15px;
+
+    border: 1px solid $border-color;
+    border-radius: 0px 4px 4px 0;
+    outline: none;
+
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+
+
+    background-color: transparent;
+    color: $black87;
+
+
+    @media screen and (min-width: 768px) {
+        width: (328px - 17px);
+    }
+
+    &:focus::placeholder {
+        opacity: 0;
+    }
+
+    &:invalid {
+        border: 1px solid $error-color;
+    }
+
+    &:placeholder-shown {
+        color: $gray-text-color;
+    }
+}
+
+
+
+.upload_lable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 14.5px;
+
+    color: $black87;
+
+    border: 1px solid $black87;
+    outline: none;
+    border-radius: 4px 0px 0px 4px;
+
+}
+
+
+.upload_hidden {
+    display: none;
+
+}

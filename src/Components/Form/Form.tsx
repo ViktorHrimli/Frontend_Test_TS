@@ -18,6 +18,7 @@ import { usersApi } from "redux/userApi";
 // components
 import { ErrorText } from "Components/reUseComonents/ErrorText/ErrorText";
 import { RadioButton } from "./RadioButton/RadioButton";
+import { UploadInput } from "./UploadInput/UploadInput";
 
 const initialState: Inputs = {
   name: "",
@@ -31,7 +32,6 @@ const Form = () => {
   const [postUser] = usersApi.usePostNewUserMutation();
   const { data: newToken, refetch } = usersApi.useGetTokenQuery("");
 
-  const [valueFakeInput, setValueFakeInput] = useState("");
   const [newUser, setNewUser] = useState(new FormData());
   const [token, setToken] = useState("");
 
@@ -145,42 +145,11 @@ const Form = () => {
         </div>
         {/* PHONE FIELD START */}
       </div>
-
-      {/* radio btn start */}
+      {/* radio btn  */}
       <RadioButton register={register} />
-      {/* radio btn end */}
 
-      <div className="upload_input">
-        {/* hide input */}
-        <input
-          className="upload_hidden"
-          id="upload"
-          type="file"
-          accept=".jpg, .jpeg, .png"
-          required={true}
-          size={5000000}
-          {...register("files", {
-            required: {
-              value: true,
-              message: "Feilds required, photo must be (.img .png .jpeg)",
-            },
-            onChange(event) {
-              setValueFakeInput(event.target.files[0].name);
-            },
-          })}
-        />
-        <label className="upload_lable" htmlFor="upload">
-          Upload
-        </label>
-        {/* fake input */}
-        <input
-          className="fake_input"
-          placeholder="Upload your photo"
-          type="text"
-          required={true}
-          value={valueFakeInput}
-        />
-      </div>
+      {/* Upload Input */}
+      <UploadInput register={register} />
 
       <input
         className="button_submit"
