@@ -1,6 +1,5 @@
 import React from "react";
 import "./ItemsCard.scss";
-import Cover from "../../Images/photo-cover.svg";
 
 import { UserType } from "../../types/users";
 
@@ -11,10 +10,10 @@ const ItemsCard = (props: UserType) => {
       <div className="card_user">
         <img
           className="card_photo"
-          src={photo ? photo : Cover}
+          src={photo}
           alt="Test Logo"
-          width={70}
-          height={70}
+          width="70"
+          height="70"
         />
         <div className="text_ex_tooltip">
           <p className="card_text">{name}</p>
