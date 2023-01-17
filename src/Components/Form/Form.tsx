@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 // style
@@ -14,6 +15,7 @@ import {
 
 import { Inputs } from "types/users";
 import { usersApi } from "redux/userApi";
+import { succsesPage } from "redux/userSlice";
 
 // components
 import { ErrorText } from "Components/reUseComonents/ErrorText/ErrorText";
@@ -35,6 +37,8 @@ const Form = () => {
   const [newUser, setNewUser] = useState(new FormData());
   const [token, setToken] = useState("");
 
+  const dispatch = useDispatch();
+
   const {
     register,
     reset,
@@ -52,6 +56,7 @@ const Form = () => {
 
     if (newToken) {
       setToken(newToken.token);
+      dispatch(succsesPage(true));
       refetch();
     }
 
@@ -61,7 +66,7 @@ const Form = () => {
   useEffect(() => {
     // CREATE NEW USER
     if (newUser.get("email")) {
-      postUser({ newUser, token });
+      // postUser({ newUser, token });
     }
     return () => {};
   }, [newUser, postUser, token]);

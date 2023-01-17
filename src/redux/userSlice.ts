@@ -1,11 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const usersSlice = createSlice({
+const initialState = {
+  flag: false,
+};
+
+const usersSlice = createSlice({
   name: "smalSlice",
-  initialState: false,
+  initialState,
   reducers: {
     succsesPage(state, actions) {
-      state = actions.payload;
+      state.flag = actions.payload;
     },
   },
 });
+
+export const { succsesPage } = usersSlice.actions;
+export const sliceReducer = usersSlice.reducer;

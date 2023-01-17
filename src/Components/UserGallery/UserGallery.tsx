@@ -10,14 +10,12 @@ import { TitleText } from "Components/reUseComonents/TitleText/TitleText";
 //
 import { usersApi } from "redux/userApi";
 
-type Props = {};
-
-const UserGallery = (props: Props) => {
+const UserGallery = () => {
   // local state
   const [pages, setPages] = useState(1);
   const [showBtn, setShowBtn] = useState(true);
-  // request
 
+  // request
   const { data, isLoading, error, isSuccess } =
     usersApi.useGetAllUsersQuery(pages);
 
