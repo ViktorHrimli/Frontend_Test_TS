@@ -78,6 +78,7 @@
 
     position: absolute;
     display: none;
+
     top: 20px;
     left: 50px;
 
@@ -90,7 +91,7 @@
     box-sizing: border-box;
     white-space: nowrap;
 
-    opacity: 0;
+
 
     transition: opacity 300ms;
 }
@@ -109,6 +110,7 @@
 
 .text_ex_tooltip_email .tooltip_content_email {
     position: absolute;
+    display: none;
 
     bottom: -56px;
     left: 100px;
@@ -122,11 +124,10 @@
     box-sizing: border-box;
     white-space: nowrap;
 
-    opacity: 0;
 
     transition: opacity 300ms;
 }
 
 .text_ex_tooltip_email:hover .tooltip_content_email {
-    opacity: 1;
+    display: block;
 }

@@ -9,13 +9,15 @@ type Props = {};
 
 const Header = (props: Props) => {
   return (
-    <div className="header_conteiner">
-      <div className="icons_task">
-        <img src={Logo} alt="Test Logo" />
-      </div>
-      <div className="buttons_conteiner">
-        <Button text="Users" />
-        <Button text="Sign up" />
+    <div className="header_wrapper">
+      <div className="header_conteiner">
+        <div className="icons_task">
+          <img src={Logo} alt="Test Logo" />
+        </div>
+        <div className="buttons_conteiner">
+          <Button text="Users" />
+          <Button text="Sign up" />
+        </div>
       </div>
     </div>
   );

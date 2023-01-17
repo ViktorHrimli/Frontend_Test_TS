@@ -183,7 +183,7 @@ const Form = () => {
       <input
         className="button_submit"
         type="submit"
-        value="Submit"
+        value="Sign up"
         disabled={!isValid}
       />
     </form>

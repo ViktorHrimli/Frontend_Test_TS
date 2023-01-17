@@ -1,6 +1,5 @@
 .select_text {
-    margin-left: 5px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .conteiner_select {
@@ -10,7 +9,7 @@
     justify-content: center;
     width: 100%;
 
-    margin-top: 25px;
+    margin-top: 45px;
 }
 
 .conteiner_checkbox {
@@ -25,7 +24,7 @@
 .check_box_leble {
     display: inline-flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 
     font-size: 16px;
     line-height: 26px;
@@ -33,10 +32,13 @@
     grid-gap: 12px;
 }
 
+// CASTOM CHECKBOX
+
 .check_box {
     position: relative;
     height: 22px;
     width: 22px;
+    margin: 0;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
