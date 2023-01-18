@@ -25,6 +25,36 @@
     grid-gap: 50px;
 }
 
+.wrapper_input {
+    position: relative;
+
+    span {
+        position: absolute;
+        top: 18px;
+        left: 16px;
+
+        font-size: $paragraph-size-m;
+        line-height: $paragraph-size-m;
+
+        color: $gray-text-color;
+        background-color: transparent;
+    }
+
+}
+
+.lable_text {
+    position: absolute;
+    top: 18px;
+    left: 16px;
+
+    font-size: $paragraph-size-m;
+    line-height: $paragraph-size-m;
+
+    color: $gray-text-color;
+    background-color: transparent;
+
+}
+
 .input {
     display: inline-flex;
 
@@ -41,17 +71,16 @@
     background-color: transparent;
     color: $black87;
 
+    transition: 400ms;
+
     &:invalid {
         border: 1px solid $error-color;
-    }
-
-    &:focus::placeholder {
-        opacity: 0;
     }
 
     &:placeholder-shown {
         color: $gray-text-color;
     }
+
 
     @media screen and (min-width: 768px) {
         width: (380px - 17px);
@@ -59,78 +88,22 @@
 }
 
 
-// upload input 
 
-.upload_input {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: center;
+.input:focus~span,
+.input:valid~span {
+    transform: translate(6px, -24px);
+    width: 40px;
 
-    width: 100%;
+    text-align: center;
 
-    margin-top: 47px;
-    margin-bottom: 50px;
+    font-size: $paragraph-size-sm;
+    line-height: $paragraph-LineHeight-sm;
 
+    background-color: $background-color;
 }
 
-.fake_input {
-    display: inline-flex;
-
-    width: (260px - 17px);
-    padding: 14px 0px 14px 15px;
-
-    border: 1px solid $border-color;
-    border-radius: 0px 4px 4px 0;
-    outline: none;
-
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 24px;
-
-
-    background-color: transparent;
-    color: $black87;
-
-
-    @media screen and (min-width: 768px) {
-        width: (328px - 17px);
-    }
-
-    &:focus::placeholder {
-        opacity: 0;
-    }
-
-    &:invalid {
-        border: 1px solid $error-color;
-    }
-
-    &:placeholder-shown {
-        color: $gray-text-color;
-    }
-}
-
-
-
-.upload_lable {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 13px 14.5px;
-
-    color: $black87;
-
-    border: 1px solid $black87;
-    outline: none;
-    border-radius: 4px 0px 0px 4px;
-
-}
-
-
-.upload_hidden {
-    display: none;
-
+.input:focus:invalid~span {
+    color: $error-color ;
 }
 
 

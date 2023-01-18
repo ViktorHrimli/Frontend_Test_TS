@@ -76,11 +76,12 @@ const Form = () => {
       <div className="conteiner_input">
         {/* NAME FIELD  START */}
 
-        <div>
+        <div className="wrapper_input">
           <input
-            placeholder="Your name"
             className="input"
-            minLength={2}
+            id="name"
+            min="2"
+            required={true}
             {...register("name", {
               required: {
                 value: true,
@@ -100,15 +101,16 @@ const Form = () => {
               },
             })}
           />
+          <span>Name</span>
           {errors?.name && <ErrorText text={errors.name.message} />}
         </div>
         {/* NAME FIELD END */}
 
         {/* EMAIL FIELD START */}
-        <div className="">
+        <div className="wrapper_input">
           <input
-            placeholder="Email"
             className="input"
+            required={true}
             pattern="^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$"
             {...register("email", {
               required: {
@@ -129,15 +131,16 @@ const Form = () => {
               },
             })}
           />
+          <span>Email</span>
           {errors?.email && <ErrorText text={errors.email.message} />}
         </div>
         {/* EMAIL FIELD END */}
 
         {/* PHONE FIELD START */}
-        <div className="">
+        <div className="wrapper_input">
           <input
-            placeholder="Phone"
             className="input"
+            required={true}
             pattern="^[\+]{0,1}380([0-9]{9})$"
             {...register("phone", {
               required: {
@@ -158,6 +161,7 @@ const Form = () => {
               },
             })}
           />
+          <span>Phone</span>
           {errors?.phone && <ErrorText text={errors.phone.message} />}
         </div>
         {/* PHONE FIELD START */}
