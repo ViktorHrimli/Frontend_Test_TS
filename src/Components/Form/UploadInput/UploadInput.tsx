@@ -42,7 +42,7 @@ const UploadInput: React.FC<Props> = ({
         <input
           id="upload"
           type="file"
-          accept=".png, .jpg, .jpeg"
+          accept=".png, .jpg, .jpeg .webp"
           hidden={true}
           size={5000000}
           {...register("files", {

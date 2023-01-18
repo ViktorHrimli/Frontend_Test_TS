@@ -1,6 +1,6 @@
 // max size img
 const SIZE = 5000000;
-const arrayFormat = [".jpg", ".png", ".jpeg"];
+const arrayFormat = [".jpg", ".png", ".jpeg", ".webp"];
 
 const checkUploadFile = (name: string, size: number): boolean => {
   const format = name.slice(name.lastIndexOf("."));
