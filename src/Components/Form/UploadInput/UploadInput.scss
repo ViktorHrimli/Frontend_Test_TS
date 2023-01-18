@@ -1,6 +1,7 @@
 @use 'src/styles/_variables.scss' as *;
 
 .upload_input {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -11,7 +12,9 @@
     margin-top: 47px;
     margin-bottom: 50px;
 
+
 }
+
 
 .fake_input {
     display: inline-flex;
@@ -40,14 +43,11 @@
         opacity: 0;
     }
 
-    &:invalid {
-        border: 1px solid $error-color;
-    }
-
     &:placeholder-shown {
         color: $gray-text-color;
     }
 }
+
 
 
 
@@ -67,7 +67,23 @@
 }
 
 
-.upload_hidden {
-    display: none;
+.error_upload-input {
+    position: absolute;
+    top: 56px;
+    left: 0;
 
+
+    font-size: 12px;
+    line-height: 14px;
+
+    color: $error-color;
+
+}
+
+.errors {
+    border: 1px solid $error-color;
+}
+
+.errors_lable {
+    border: 2px solid $error-color;
 }

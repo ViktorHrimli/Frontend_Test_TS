@@ -2,6 +2,7 @@ import { postNewUser } from "./createFormData";
 import { patternEmail, patternPhone } from "./pattern";
 import { validateEmail, validateName, validatePhone } from "./validateShema";
 import { useAppSelector } from "./hooks";
+import { checkUploadFile } from "./checkUploadImg";
 
 export {
   patternEmail,
@@ -10,5 +11,6 @@ export {
   validateEmail,
   validateName,
   validatePhone,
+  checkUploadFile,
   useAppSelector,
 };

@@ -26,7 +26,13 @@ const RadioButton: React.FC<Props> = ({ register }) => {
                   className="check_box"
                   type="radio"
                   value={id}
-                  {...register("position", {})}
+                  required={true}
+                  {...register("position", {
+                    require: {
+                      value: true,
+                      message: "Fields is required",
+                    },
+                  })}
                 />
                 {name}
               </label>
@@ -38,51 +44,3 @@ const RadioButton: React.FC<Props> = ({ register }) => {
 };
 
 export { RadioButton };
-// {
-//   /* FRONTEND DEV */
-// }
-// <label className="check_box_leble">
-//   <input
-//     className="check_box"
-//     type="radio"
-//     value="Frontend developer"
-//     {...register("position", {})}
-//   />
-//   Frontend developer
-// </label>;
-// {
-//   /* BACKEND DEV */
-// }
-// <label className="check_box_leble">
-//   <input
-//     className="check_box"
-//     type="radio"
-//     value="Backend developer"
-//     {...register("position", {})}
-//   />
-//   Backend developer
-// </label>;
-// {
-//   /* DESIGNER */
-// }
-// <label className="check_box_leble">
-//   <input
-//     className="check_box"
-//     type="radio"
-//     value="Designer"
-//     {...register("position", {})}
-//   />
-//   Designer
-// </label>;
-// {
-//   /* Qa */
-// }
-// <label className="check_box_leble">
-//   <input
-//     className="check_box"
-//     type="radio"
-//     value="QA"
-//     {...register("position", {})}
-//   />
-//   QA
-// </label>;

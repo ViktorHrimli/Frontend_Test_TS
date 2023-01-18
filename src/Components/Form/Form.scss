@@ -158,6 +158,10 @@
     &:disabled {
         background-color: $disabled-color;
         color: $white87;
+
+        &:hover {
+            background-color: $disabled-color;
+        }
     }
 
 
@@ -166,7 +170,7 @@
         background-color: $primary-color;
         color: $black87;
 
-        &:hover:focus {
+        &:hover {
             background-color: $hover-color;
         }
     }
