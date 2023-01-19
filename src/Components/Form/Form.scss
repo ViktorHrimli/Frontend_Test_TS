@@ -73,14 +73,17 @@
 
     transition: 400ms;
 
-    &:invalid {
+    // &:invalid {
+    //     border: 1px solid $error-color;
+    // }
+
+    &:invalid:focus {
         border: 1px solid $error-color;
     }
 
-    &:placeholder-shown {
-        color: $gray-text-color;
+    &:invalid:visited {
+        border: 1px solid $error-color;
     }
-
 
     @media screen and (min-width: 768px) {
         width: (380px - 17px);

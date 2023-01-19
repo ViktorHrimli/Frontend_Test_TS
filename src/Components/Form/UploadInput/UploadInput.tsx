@@ -87,6 +87,7 @@ const UploadInput: React.FC<Props> = ({
       </div>
       <input
         className="button_submit"
+        onClick={() => setValueFakeInput("")}
         type="submit"
         value="Sign up"
         disabled={!isValid || newErrors}

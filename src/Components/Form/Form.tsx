@@ -80,7 +80,7 @@ const Form = () => {
           <input
             className="input"
             id="name"
-            min="2"
+            minLength={2}
             required={true}
             {...register("name", {
               required: {

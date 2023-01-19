@@ -1,8 +1,20 @@
 @use 'src/styles/_variables.scss' as *;
 
 .header_wrapper {
+
+
     width: 100%;
+
     background-color: $white87;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
 }
 
 .header_conteiner {
